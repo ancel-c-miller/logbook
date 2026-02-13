@@ -13,7 +13,7 @@ ARG DEV=false
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
-    if [ "$DEV" = "true" ]; then \
+    if [ $DEV = "true" ]; then \
         cat /tmp/requirements.dev.txt >> /tmp/requirements.txt; \
     fi && \
     rm -rf /tmp && \
